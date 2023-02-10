@@ -1,8 +1,7 @@
 package br.com.valloo.cards.application.incoming.card.update;
 
-import br.com.valloo.cards.application.incoming.card.commons.converter.CardConverter;
 import br.com.valloo.cards.application.incoming.card.commons.dtos.CardDTO;
-import br.com.valloo.cards.application.incoming.card.commons.response.MessageResponse;
+import br.com.valloo.cards.infrastructure.errorhandling.MessageResponse;
 import br.com.valloo.cards.domain.card.service.CardUpdateService;
 import jakarta.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;

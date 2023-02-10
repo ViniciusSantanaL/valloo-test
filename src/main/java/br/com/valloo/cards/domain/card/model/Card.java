@@ -22,7 +22,7 @@ public class Card implements Serializable {
     @Column(name = "id", nullable = false, unique = true)
     private UUID id;
 
-    @Column(name = "card_number")
+    @Column(name = "card_number", unique = true)
     private String cardNumber;
 
     @Column(name = "card_security_code")
@@ -39,10 +39,11 @@ public class Card implements Serializable {
 
     public Card() {}
 
-    public Card(String cardNumber, String cardSecurityCode, LocalDate cardExpirationDate) {
+    public Card(String cardNumber, String cardSecurityCode, LocalDate cardExpirationDate, String userName) {
         this.cardNumber = cardNumber;
         this.cardSecurityCode = cardSecurityCode;
         this.cardExpirationDate = cardExpirationDate;
+        this.userName = userName;
     }
 
     @Override

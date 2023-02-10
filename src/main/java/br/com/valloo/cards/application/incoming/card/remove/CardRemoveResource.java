@@ -1,6 +1,6 @@
 package br.com.valloo.cards.application.incoming.card.remove;
 
-import br.com.valloo.cards.application.incoming.card.commons.response.MessageResponse;
+import br.com.valloo.cards.infrastructure.errorhandling.MessageResponse;
 import br.com.valloo.cards.domain.card.service.CardRemoveService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;

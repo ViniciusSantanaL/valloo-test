@@ -4,6 +4,9 @@ import br.com.valloo.cards.application.incoming.card.commons.converter.CardConve
 import br.com.valloo.cards.application.incoming.card.commons.dtos.CardDTO;
 import br.com.valloo.cards.domain.card.service.CardFetchService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.PageRequest;
+import org.springframework.data.domain.Sort;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.*;
 
@@ -25,8 +28,17 @@ public class CardFetchResource {
 
     @GetMapping
     @ResponseStatus(HttpStatus.OK)
-    public void fetchCard() {
+    public Page<CardDTO> fetchCard(
+            @RequestParam(name = "userName", required = false) String userName,
+            @RequestParam(name = "cardNumber", required = false) String cardNumber,
+            @RequestParam(name = "cardSecurityCode", required = false) String cardSecurityCode,
+            @RequestParam(name = "cardExpirationDate", required = false) String cardExpirationDate,
+            @RequestParam(defaultValue = "cardExpirationDate") String sortBy ,
+            @RequestParam(defaultValue = "0") Integer page,
+            @RequestParam(defaultValue = "30") Integer pageSize) {
 
+        return service.fetchCard(userName,cardNumber,cardSecurityCode,cardExpirationDate,
+                PageRequest.of(page,pageSize, Sort.by(sortBy))).map(CardConverter::toResponse);
     }
 
     @GetMapping("/{cardId}")

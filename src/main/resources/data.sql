@@ -1,0 +1,4 @@
+INSERT INTO card (id,card_number, card_security_code, card_expiration_date, revision, user_name) VALUES ('f3bdcef6-a959-11ed-afa1-0242ac120002', '4321-6225-1883-5959', '910', '2024-04-01', 0,'Teste 1');
+INSERT INTO card (id,card_number, card_security_code, card_expiration_date, revision, user_name) VALUES ('475efa3e-a95b-11ed-afa1-0242ac120002', '4591-8724-5960-8559', '262', '2024-04-01', 0,'Teste 2');
+INSERT INTO card (id,card_number, card_security_code, card_expiration_date, revision, user_name) VALUES ('4c0bcdaa-a95b-11ed-afa1-0242ac120002', '4087-7001-9437-2697', '538', '2024-04-01', 0,'Teste 3');
+INSERT INTO card (id,card_number, card_security_code, card_expiration_date, revision, user_name) VALUES ('50af1b46-a95b-11ed-afa1-0242ac120002', '4595-7620-1681-2396', '775', '2024-04-01', 0,'Teste 4');
